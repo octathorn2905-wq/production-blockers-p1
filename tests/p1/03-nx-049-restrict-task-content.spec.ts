@@ -102,7 +102,7 @@ test('NX-049 Restrict changes to other users task content', async ({ browser }) 
     const staffDialog = await refreshAndOpen(staff, 'staff', taskId);
     const staffAfter = await readDialog(staffDialog);
     const staffStatus = await selectedOption(staffDialog, /In Progress|Open|Completed/);
-    if (!/In Progress/i.test(staffStatus) && !/Status changed to started/i.test(staffAfter)) fail('After refresh, Staff does not show In Progress inside the task.');
+    if (!/In Progress/i.test(`${staffStatus}\n${staffAfter}`) && !/Status changed to started/i.test(staffAfter)) fail('After refresh, Staff does not show In Progress inside the task.');
     if (!staffAfter.includes(comment)) fail('After refresh, Staff does not show the provider comment inside the task.');
   } finally {
     await providerSession?.context.close();

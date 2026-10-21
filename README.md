@@ -1,6 +1,8 @@
 # P1 production blockers
 
-Every production-blocker check lives in `tests/p1`. Each file is one test. The number at the start of the file name is the run order. The Playwright name starts with the id, so you can run one test by that id.
+The full result list is in [P1-REPORT.md](P1-REPORT.md): 46 fixed, 2 not fixed, 2 not fully verified.
+
+Every saved Playwright script lives in `tests/p1`. The number at the start of the file name is the run order. The Playwright name starts with the id, so you can run one test by that id.
 
 This repo does not include the post-deployment smoke suite.
 
